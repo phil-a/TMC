@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+	<li><a href="/articles/all">Articles</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<div class="row">
+	<div class="large-12 columns">
+		<div class="panel radius">
+			<h1>{{ article.title }}</h1>
+			<p>{{ article.body }}</p>
+			<p>{{ article.tags }}</p>
+			<p>{{ article.ecwid }}</p>
+
+
+			<div class="row">
+				<div class="large-12 columns">
+
+
+					<div class="callout panel radius">
+					<div align="center">
+<ul class="clearing-thumbs" data-clearing>
+			{% if article.thumbnail %}
+  <li><a href="/static/assets/{{article.thumbnail}}"><img src="/static/assets/{{article.thumbnail}}"></a></li>
+			{% endif %}
+
+			{% if article.thumbnail2 %}
+  <li><a href="/static/assets/{{article.thumbnail2}}"><img src="/static/assets/{{article.thumbnail2}}"></a></li>
+			{% endif %}
+
+			{% if article.thumbnail3 %}
+  <li><a href="/static/assets/{{article.thumbnail3}}"><img src="/static/assets/{{article.thumbnail3}}"></a></li>
+			{% endif %}
+</ul>	
+</div>
+						<div class="ecwid ecwid-SingleProduct ecwid-Product ecwid-Product-{{ article.ecwid }}" itemscope itemtype="http://schema.org/Product" data-single-product-id="{{ article.ecwid }}">
+
+
+
+
+
+						<div class="ecwid-title" itemprop="name"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecwid-productBrowser-price ecwid-price" itemprop="price"></div></div><div itemprop="options"></div><div itemprop="addtobag"></div></div><div id='xSingleProduct-place'></div><script type='text/javascript'> function onloadCallback() {xSingleProduct('id=xSingleProduct-place');}if (!window.ecwidScript) { window.ecwid_script_defer = true;window.ecwidScript = document.createElement('script');ecwidScript.defer=true;ecwidScript.src='http://app.ecwid.com/script.js?6350862';ecwidScript.charset='utf-8';if(ecwidScript.addEventListener) {ecwidScript.addEventListener('load', onloadCallback, false);} else if(ecwidScript.readyState) {ecwidScript.onreadystatechange = onloadCallback;}document.body.appendChild(ecwidScript);} else if (window.Ecwid) {onloadCallback();}</script>
+
+					</div>
+				</div>
+			</div>
+		
+
+
+			<h3>{{ article.clothing_style }}</h3>
+
+
+			<p>{{article.likes}} people liked this  article</p>
+			<p><a href="/articles/like/{{article.id}}">Like</a></p>
+
+
+
+
+		</div>
+	</div>
+</div>
+<!--
+<h2>Comments</h2>
+{% for c in article.comment_set.all %}
+<p>{{c.name}}: {{c.body}}</p>
+{% endfor %}
+
+<p><a href="/articles/add_comment/{{article.id}}"> Add Comment </a></p>
+-->
+{% endblock %}

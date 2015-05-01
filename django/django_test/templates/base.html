@@ -1,0 +1,258 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}TMC{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "assets/css/foundation.css" %}" />
+        <link rel="stylesheet" href="{% static "assets/css/default.css" %}" />
+
+    <script src="{% static "assets/js/vendor/modernizr.js" %}"></script>
+	<script src="{% static "assets/js/jquery-2.1.3.min.js" %}"></script>
+	<script src="{% static "assets/js/ajax.js" %}"></script>
+<link rel="stylesheet" type="text/css" href="{% static "assets/slick/slick.css" %}"/>
+<link rel="stylesheet" type="text/css" href="{% static "assets/slick/slick-theme.css" %}"
+/>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+
+
+				
+</head>
+
+<body style="background-image: url({% static "assets/images/fabric_plaid_@2X.png" %}); background-repeat: repeat;">
+
+<div class="sticky">
+
+<nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
+  <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="/"><b>That Man Concept</b></a></h1>
+
+    </li>
+    <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
+  </ul>
+
+  
+<section class="top-bar-section">
+    <ul class="left">
+      <li class="has-dropdown not-click"><a href="#">Shop</a>
+
+        <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+          <li><label>By Style:</label></li>
+          <li><a href="/articles/all">All</a></li>
+          <li><a href="#">Professional</a></li>
+          <li><a href="#">Street</a></li>
+          <li><a href="#">Prep</a></li>
+          <li class="divider"></li>
+
+          <li class="has-dropdown not-click"><a href="#">Sub-item 4</a>
+
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 4</a></li>
+              <li><label>Level Two</label></li>
+              <li class="has-dropdown not-click"><a href="#">Sub-item 1</a>
+
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 1</a></li>
+                  <li><label>Level Three</label></li>
+                  <li class="has-dropdown not-click"><a href="#">Sub-item 1</a>
+
+                    <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 1</a></li>
+                      <li><label>Level Four</label></li>
+                      <li><a href="#">Sub-item 1</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="#">Sub-item 2</a></li>
+                  <li><a href="#">Sub-item 3</a></li>
+                  <li class="divider"></li>
+                  <li><a href="#">Sub-item 4</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Sub-item 2</a></li>
+              <li><a href="#">Sub-item 3</a></li>
+              <li><a href="#">Sub-item 4</a>
+            </li></ul>
+          </li>
+          <li><a href="#">Sub-item 5</a></li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+
+
+
+    <ul class="left">
+      <li class="has-dropdown not-click"><a href="#">Customer Service</a>
+
+        <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+ 			<li><label>Company</label></li>
+ 		<li><a href="#">Our Story</a></li>
+
+
+
+          <li><a href="#" data-reveal-id="myModal">Contact Us</a>
+
+<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Awesome. I have it.</h2>
+  <p class="lead">Your couch.  It is mine.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div></li>
+          <li class="has-dropdown not-click"><a href="#">Socialize</a>
+
+            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">Tumblr</a>
+            </li></ul>
+          <li class="divider"></li>
+
+          <li><label>Good to know</label></li>
+          <li><a href="#">Buying Guide</a></li>
+          <li><a href="#">Size Chart</a></li>
+          <li><a href="#">Returns and Exchanges</a></li>
+          <li><a href="#">Policies</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li class="divider"></li>
+         
+          </li>
+        </ul>
+      </li>
+      <li class="divider"></li>
+    </ul>
+
+
+
+
+    <!-- Right Nav Section -->
+      <ul class="right">
+      	<li class="has-form">
+  		<a href="/accounts/register" class="radius button">My Account</a>
+		</li>
+      </ul>
+  </section></nav>
+</div>
+
+
+
+
+
+<div id="page">
+
+	<div id="sidebar">
+		{% block sidebar %}
+		<ul>
+		       <a href="/articles/all" class="small radius button">Articles</a><br/>
+		       <a href="/admin/" class="small radius button">Admin</a><br/>
+		</ul>
+
+		{% endblock %}
+	</div>
+
+
+
+	<div  class="main-border"  id="content">
+		{% block content %}Content Area{% endblock %}
+
+		<!-- Footer -->
+
+		<footer  class="footer-distributed">
+
+			<div class="footer-left">
+
+				<h3>Company<span>logo</span></h3>
+
+				<p class="footer-links">
+					<a href="#">Home</a>
+					·
+					<a href="#">Blog</a>
+					·
+					<a href="#">Pricing</a>
+					·
+					<a href="#">About</a>
+					·
+					<a href="#">Faq</a>
+					·
+					<a href="#">Contact</a>
+				</p>
+
+				<p class="footer-company-name">Company Name &copy; 2015</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>21 Revolution Street</span> Paris, France</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p>+1 555 123456</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">support@company.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+
+				<p class="footer-company-about">
+					<span>About the company</span>
+					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+				</p>
+
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+					<a href="#"><i class="fa fa-github"></i></a>
+
+				</div>
+
+			</div>
+
+		</footer>
+
+
+
+	</div>
+
+</div>
+
+<script src="{% static "assets/js/vendor/fastclick.js" %}"></script>
+<script src="{% static "assets/js/foundation.min.js" %}"></script>
+<script type="text/javascript" src="{% static "assets/slick/slick.min.js" %}"></script>
+
+<script>
+  $(document).foundation();
+</script>
+
+<!--Slick-->
+  <script type="text/javascript">
+   
+//Homepage carousel
+   $(document).ready(function(){
+      $('.your-class').slick({
+  dots: true,
+  infinite: true,
+  speed: 500,
+  fade: true,
+  cssEase: 'linear'
+        });
+    });
+
+
+   
+  </script>
+
+</body>
+</html>

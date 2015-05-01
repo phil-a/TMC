@@ -1,0 +1,13 @@
+[
+{
+    "fields": {
+        "body": "This is a test yo!",
+        "thumbnail": "uploaded_files/1429996689_72_cshub.png",
+        "pub_date": "2015-04-25T00:00:00Z",
+        "likes": 4,
+        "title": "CSHub"
+    },
+    "model": "article.article",
+    "pk": 4
+}
+]

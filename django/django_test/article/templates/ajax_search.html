@@ -1,0 +1,23 @@
+{% if articles.count > 0 %}
+
+{% for article in articles %}
+{% if article.thumbnail %}
+<a class="radius" href="/articles/get/{{ article.id }}/">
+<div width = "50" height = "50" class ="button secondary radius">
+<img class = "th radius"src="/static/assets/{{article.thumbnail}}" width="75"/>
+<div>
+<h5>
+{{ article.title }}
+</h5>
+</div>
+</div>
+</a>
+{% endif %}
+
+{% endfor %}
+
+{% else %}
+
+{% endif %}
+
+
