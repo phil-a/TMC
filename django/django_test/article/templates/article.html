@@ -47,15 +47,8 @@
 				</div>
 -->
 
-				<div class="large-6 columns">
 
-  <div class="your-class">
-    <div><img src="/static/assets/{{article.thumbnail}}"></div>
-    <div><img src="/static/assets/{{article.thumbnail2}}"></div>
-    <div><img src="/static/assets/{{article.thumbnail3}}"></div>
-  </div>
 
-</div>
 </div>
 </div>
 </div>
@@ -70,8 +63,13 @@
 						<div id='xSingleProduct-place'></div>
 
 						<script type='text/javascript'> function onloadCallback() {xSingleProduct('id=xSingleProduct-place');}if (!window.ecwidScript) { window.ecwid_script_defer = true;window.ecwidScript = document.createElement('script');ecwidScript.defer=true;ecwidScript.src='http://app.ecwid.com/script.js?6350862';ecwidScript.charset='utf-8';if(ecwidScript.addEventListener) {ecwidScript.addEventListener('load', onloadCallback, false);} else if(ecwidScript.readyState) {ecwidScript.onreadystatechange = onloadCallback;}document.body.appendChild(ecwidScript);} else if (window.Ecwid) {onloadCallback();}</script>
-
-				
+<div align="center">
+  <div class="slk-article">
+    <div><a class="th radius" href="/articles/get/{{ article.id }}/"><img src="/static/assets/{{article.thumbnail}}"  width="100%"></a></div>
+    <div><a class="th radius" href="/articles/get/{{ article.id }}/"><img src="/static/assets/{{article.thumbnail2}}"  width="100%"></a></div>
+    <div><a class="th radius" href="/articles/get/{{ article.id }}/"><img src="/static/assets/{{article.thumbnail3}}"  width="100%"></a></div>
+  </div>
+  </div>				
 <!--
 <h2>Comments</h2>
 {% for c in article.comment_set.all %}
