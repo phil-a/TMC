@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block sidebar %}
+
+<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
+	<ul class="left">
+		<li class="has-form">
+			<div class="row collapse">
+	   			<div class="large-8 small-9 columns">
+		   			{% csrf_token %}
+					<input type="text" placeholder="Find Stuff" id="search" name="search" />
+	    		</div>
+		    	<div class="large-8 small-3 columns">
+		    	</div>
+			</div>
+		</li>
+    </ul>
+</nav>
+
+  <div id = "search-results">
+  </div>
+
+<!-- blank nav bar -->
+  <nav class="top-bar" data-topbar role="navigation">
+  </nav>
+
+
+<!--Carousel -->
+<!--
+<div align="center" class="your-class">
+	<div><img src="{% static "assets/images/f1.jpg" %}"  width="100%"></div>
+	<div><img src="{% static "assets/images/f2.jpg" %}"  width="100%"></div> 
+</div>
+-->
+<h1>Our Story</h1>
+
+<div class="row">
+    <div class="large-4 columns">
+LONDON 
+A forward-thinking city with a penchant for the unique, London has a multi-faceted persona defined as being eccentric, modern and timeless. Home to names such as Vivienne Westwood and Alexander McQueen, London is one of the leading fashion capitals and a breeding ground for aspiring talent. 
+</div>
+<div class="large-4 columns">
+SEOUL 
+Gaining recognition for its style sensibility and creative scene from which emerging trends originate, Seoul has been acknowledged for its roster of up-and-coming designers and tastemakers. With its formidable influence, Seoul is becoming the next avant-garde powerhouse in both music and fashion. 
+</div>
+<div class="large-4 columns">
+HONG KONG 
+A blend of novelty and tradition, Hong Kong evokes the image of a brilliant landscape of towering buildings, street markets and glitzy malls. Despite being dominated by the likes of Lanvin and Prada, Hong Kong has its own domestic brands that embody the metropolis's edge and sophistication. 
+</div>
+
+
+<div class="large-12 columns"><br>
+OUR FOUNDERS 
+Having honed her abilities in styling, copywriting and digital marketing at a New York City fashion start-up, as a copywriter at a web design firm and as a digital content writer for a luxury e-commerce platform, Amy Lai oversees the creative aspect of That Man Concept. With strong analytical skills and proficiency with numbers, Caleb Park represents the operations and financial side of the business. His wide breath of experience includes stints in diverse fields and firms that span accounting, banking, law and consulting.
+</div>
+
+<div class="large-12 columns"><br>
+
+OUR STORY
+
+“  She grew up with Vogue magazine and Fashion Television; He was influenced by his father’s fitted jackets and tapered suits.  ”
+
+Both from the Schulich School of Business, Amy Lai and Caleb Park have a collective appreciation for aesthetics, quality and design. Inspired by the designers they met in Seoul, Hong Kong and London, the idea to bring fledging brands to North America was conceived.
+</div>
+
+<div class="large-12 columns"><br>
+THE COMPANY  
+Our intent to re-design the online customer experience and provide the male sophisticate an unrivalled selection of products is what compels us to identify and recruit the best people for That Man Concept. Attentive to detail, a disposition to experiment and a hardwired belief that being great isn’t good enough are the qualities that define us. 
+[Team Image] 
+</div>
+{% endblock %}
+
+{% block content %}
+
+					<!--<h2>Language is: {{language}} </h2>
+					<h2>Session Language is: {{session_language}} </h2>-->
+					{% if articles.count > 0 %}
+				
+
+{% else %}
+<!--<p>None to show!</p>-->
+{% endif %}
+
+{% endblock %}
+

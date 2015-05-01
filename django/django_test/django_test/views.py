@@ -9,6 +9,9 @@ from forms import MyRegistrationForm
 def home(request):
         return render(request, "home.html")
 
+def story(request):
+        return render(request, "story.html")
+
 def login(request):
 	c = {} 										#dictionary
 	c.update(csrf(request)) 					#push csrf request object

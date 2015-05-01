@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{% static "assets/css/foundation.css" %}" />
         <link rel="stylesheet" href="{% static "assets/css/default.css" %}" />
 
+
     <script src="{% static "assets/js/vendor/modernizr.js" %}"></script>
 	<script src="{% static "assets/js/jquery-2.1.3.min.js" %}"></script>
 	<script src="{% static "assets/js/ajax.js" %}"></script>
@@ -18,12 +19,13 @@
 	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
 
-				
+				<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 </head>
 
 <body style="background-image: url({% static "assets/images/fabric_plaid_@2X.png" %}); background-repeat: repeat;">
 
-<div class="sticky">
+<!--<div class="sticky">-->
 
 <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
   <ul class="title-area">
@@ -35,9 +37,10 @@
     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
     <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
   </ul>
-
   
 <section class="top-bar-section">
+
+<!--TOPBAR SHOP -->
     <ul class="left">
       <li class="has-dropdown not-click"><a href="#">Shop</a>
 
@@ -73,17 +76,18 @@
               <li><a href="#">Sub-item 2</a></li>
               <li><a href="#">Sub-item 3</a></li>
               <li><a href="#">Sub-item 4</a>
-            </li></ul>
+            </li>
+            </ul>
           </li>
           <li><a href="#">Sub-item 5</a></li>
         </ul>
       </li>
       <li class="divider"></li>
     </ul>
+<!--END TOPBAR SHOP-->
 
 
-
-
+<!--TOPBAR CUSTOMER SERVICE -->
     <ul class="left">
       <li class="has-dropdown not-click"><a href="#">Customer Service</a>
 
@@ -92,38 +96,371 @@
  		<li><a href="#">Our Story</a></li>
 
 
-
+<!-- CONTACT MODAL-->
           <li><a href="#" data-reveal-id="myModal">Contact Us</a>
-
 <div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
-  <h2 id="modalTitle">Awesome. I have it.</h2>
-  <p class="lead">Your couch.  It is mine.</p>
-  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <h2 id="modalTitle">Contact us!</h2>
+  <p class="lead">Anything you need. Really. Anything.</p>
+
+<form>
+  <div class="row">
+    <div class="large-6 columns">
+      <label>Name:
+        <input type="text" placeholder="That Man" />
+      </label>
+    </div>
+        <div class="large-6 columns">
+      <label>Email:
+        <input type="text" placeholder="thatman@thatmanconcept.com" />
+      </label>
+    </div>
+  </div>
+    <div class="row">
+    <div class="large-12 columns">
+      <label>Message:
+        <textarea placeholder="What do you want to say?"></textarea>
+      </label>
+    </div>
+  </div>
+  </form>
+
+<a class="button success radius">Submit</a>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
-</div></li>
+</div>
+</li>
+<!-- END CONTACT MODAL-->
+         
           <li class="has-dropdown not-click"><a href="#">Socialize</a>
 
             <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
               <li><a href="#">Facebook</a></li>
               <li><a href="#">Twitter</a></li>
               <li><a href="#">Instagram</a></li>
-              <li><a href="#">Tumblr</a>
-            </li></ul>
+              <li><a href="#">Tumblr</a></li>
+            </ul>
           <li class="divider"></li>
 
           <li><label>Good to know</label></li>
-          <li><a href="#">Buying Guide</a></li>
-          <li><a href="#">Size Chart</a></li>
-          <li><a href="#">Returns and Exchanges</a></li>
-          <li><a href="#">Policies</a></li>
-          <li><a href="#">FAQ</a></li>
+        </li>
+<!-- BUYING MODAL-->
+ <li><a href="#" data-reveal-id="BuyingModal">Buying Guide</a>
+<div id="BuyingModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Buying Guide</h2>
+  <p class="lead">This is. How you buy.</p>
+  <p>
+  <ol>
+      <li>Choose the product type (shoes, pants, outwear, accessories) on the left-hand menu or select a style category (prep, street, professional) </li>
+      <li>View the products you are interested in, click on the photograph to examine product details </li>
+      <li>Available sizes, composition, reference codes and prices accompany every product  </li>
+      <li>To have your order processed, register for an account and log in </li>
+      <li>Choose whether you would like your order delivered through standard or express delivery </li>
+      <li>Select the payment method: PayPal </li>
+      <li>You will receive an email confirming your order </li>
+</ol>
+</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div></li>          
+<!--END BUYING MODAL-->
+
+
+
+ <!--SIZE MODAL-->
+ <li><a href="#" data-reveal-id="SizeModal">Size Chart</a>
+<div id="SizeModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Size Chart</h2>
+  <p class="lead">This is. How you choose a size.</p>
+  <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+</li>
+<!--END SIZE MODAL-->
+
+
+<!-- RETURN MODAL-->
+ <li><a href="#" data-reveal-id="ReturnModal">Returns and Exchanges</a>
+<div id="ReturnModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Returns & Exchanges</h2>
+  <p class="lead">Not satisfied? Not a problem.</p>
+  <p class="lead">Return it.</p>
+
+<!-- RETURN ACCORDION-->
+<ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#panel1a"> How do I return an item? [Canada] </a>
+    <div id="panel1a" class="content active">
+      You can take your package to the nearest Post office or Mailbox. Alternatively, you can call Canada Post customer service at 1-866-607-6301 to schedule a pick up at your home. Please log in and follow the steps listed at my account < returns. 
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel2a">How do I return an item? [U.S] </a>
+    <div id="panel2a" class="content">
+     If you are not able to visit a local Zara store, you may take your package to the nearest Drop off location or contact our carrier directly in order to schedule a home pick up. Please log in and follow the steps listed in my account > returns. If you are not registered at Zara.com, please use the link sent to you with your order confirmation e-mail.
+    </div>
+  </li>
+  <li class="accordion-navigation">
+    <a href="#panel3a">How will I receive my refund? </a>
+    <div id="panel3a" class="content">
+      All returns must be made within 3 weeks of the email confirming shipment. 
+    </div>
+  </li>
+    <li class="accordion-navigation">
+    <a href="#panel4a">How long do I have to return an item? </a>
+    <div id="panel4a" class="content">
+Once the return has been approved and the item has been received in the same condition in which it was sent, you will receive your refund via the same means used to make your purchase.
+    </div>
+  </li>
+    <li class="accordion-navigation">
+    <a href="#panel5a">When will I receive my refund? </a>
+    <div id="panel5a" class="content">
+After the item has been returned in the same condition with its inside and outside labels in tact, you will receive a confirmation email indicating that the refund will be paid to your account in full within 10 – 15 days. 
+<p>* Note that payments to your credit card always depend on your bank/billing institution. </p>
+    </div>
+  </li>
+
+    <li class="accordion-navigation">
+    <a href="#panel6a">What should I do if the refund amount is incorrect? </a>
+    <div id="panel6a" class="content">
+<p>Please contact our customer service, and we will resolve the problem as quickly as possible. </p>
+
+<p>That Man Concept reserves the right to reject returns sent or communicated beyond the return period limit, or items, which are not in the same condition in which they were received. </p>
+    </div>
+  </li>
+
+
+</ul>
+<!--END RETURN ACCORDION -->
+
+
+<br><p class="lead">Exchange it.</p>
+
+
+<ul class="accordion" data-accordion>
+    <li class="accordion-navigation">
+    <a href="#panel7a">Can I exchange my products? </a>
+    <div id="panel7a" class="content">
+Two options are available: 
+
+<ol><li>For another size or color, as long as the price does not change, no additional payment is necessary </li>
+
+<li>For another item, That Man Concept will issue store credit and you can purchase a new item online </li></ol>
+    </div>
+  </li>
+
+      <li class="accordion-navigation">
+    <a href="#panel8a">How long do I have to make an exchange? </a>
+    <div id="panel8a" class="content">
+<p>All exchanges must be made within three weeks of the e-mail confirming shipment </p>
+    </div>
+  </li>
+</ul>
+<!--END EXCHANGE ACCORDION -->
+
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+</li>
+ <!--END RETURNS+EXCHANGE MODAL -->
+
+<!--POLICIES MODAL-->
+ <li><a href="#" data-reveal-id="PoliciesModal">Policies</a>
+<div id="PoliciesModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Policies</h2>
+  <p class="lead">This is quite a long list. Of Boring Stuff</p>
+  <p>Read at your own risk.</p>
+
+<ul class="accordion" data-accordion>
+  <li class="accordion-navigation">
+    <a href="#panel1b">How do I return an item? [U.S] </a>
+    <div id="panel1b" class="content">
+     If you are not able to visit a local Zara store, you may take your package to the nearest Drop off location or contact our carrier directly in order to schedule a home pick up. Please log in and follow the steps listed in my account > returns. If you are not registered at Zara.com, please use the link sent to you with your order confirmation e-mail.
+    </div>
+  </li>
+  </ul>
+
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+</li>  
+ <!--END POLICIES MODAL-->
+      
+ <!--FAQ MODAL-->
+ <li><a href="#" data-reveal-id="FaqModal">FAQ</a>
+<div id="FaqModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+  <h2 id="modalTitle">Frequently Asked Questions</h2>
+  <p class="lead">You asked. We answered.</p>
+  <p>
+<!--FAQ ACCORDION -->
+<ul class="accordion" data-accordion>
+
+   <li class="accordion-navigation">
+    <a href="#panel1c">In which countries is it possible to shop online? </a>
+    <div id="panel1c" class="content">
+      We only ship to Canada and the United States of America 
+    </div>
+  </li>
+
+   <li class="accordion-navigation">
+    <a href="#panel2c">In which countries is it possible to shop online? </a>
+    <div id="panel2c" class="content">
+      We only ship to Canada and the United States of America 
+    </div>
+  </li>
+
+     <li class="accordion-navigation">
+    <a href="#panel3c">How many languages is it possible to browse in? </a>
+    <div id="panel3c" class="content">
+      That Man Concept.com can be viewed in English and soon to be (Korean and Chinese). 
+    </div>
+  </li>
+
+
+     <li class="accordion-navigation">
+    <a href="#panel4c">Is it possible to receive periodic information by email about That Man Concept’s latest products and offers? </a>
+    <div id="panel4c" class="content">
+Yes. By clicking on the Newsletter you will be able to receive updates on new products, look books and events. </div>
+  </li>
+
+     <li class="accordion-navigation">
+    <a href="#panel5c">Can I cancel my That Man Concept subscription? </a>
+    <div id="panel5c" class="content">
+If you click the Newsletter menu and fill in the details required, any requests to unsubscribe may take 3 – 5 days to process. </div>
+  </li>
+   
+     <li class="accordion-navigation">
+    <a href="#panel6c">How do I recover my forgotten password? </a>
+    <div id="panel6c" class="content">
+If you have forgotten your password, it can be recovered in the Log In section. An email with the instructions to recover your password or create a new one will be sent to you. </div>
+  </li>
+
+       <li class="accordion-navigation">
+    <a href="#panel7c">How can I be sure that I have made my purchase correctly? </a>
+    <div id="panel7c" class="content">
+Once you have placed your order, you will be sent a confirmation email. If you do not receive an email, please contact our customer service. </div>
+  </li>
+
+       <li class="accordion-navigation">
+    <a href="#panel8c">Can I track my order? </a>
+    <div id="panel8c" class="content">
+Yes, after the product has been shipped you will be provided a tracking number and be able to see the status of your order in real time.  To do this, go to the “my orders” section in your account.  </div>
+  </li>
+
+
+      <li class="accordion-navigation">
+    <a href="#panel9c">What should I do if I receive a faulty item? </a>
+    <div id="panel9c" class="content">
+That Man Concept works closely with its designers to ensure quality control but in the rare event of receiving a faulty item, please contact our customer service. </div>
+  </li>
+
+      <li class="accordion-navigation">
+    <a href="#panel10c">What should I do if I receive an incorrect item? </a>
+    <div id="panel10c" class="content">
+If you were to accidentally receive an item that you did not order, please contact our customer service. </div>
+  </li>
+</ul>
+<!--END FAQ ACCORDION 1 -->
+
+
+<!-- FAQ ACCORDION 2 -->
+PAYMENT 
+
+<ul class="accordion" data-accordion>
+
+   <li class="accordion-navigation">
+    <a href="#panel11c">What payment method can I use to make my purchase? </a>
+    <div id="panel11c" class="content">
+That Man Concept accepts payment from PayPal, Visa and MasterCard 
+    </div>
+  </li>
+
+   <li class="accordion-navigation">
+    <a href="#panel12c">Why might my credit card be refused? 
+</a>
+    <div id="panel12c" class="content">
+Your credit card may not be accepted for the reasons below: 
+
+Expiration - Check that your card is valid. 
+Exceeding the credit limit – Contact your bank to check that the authorized amount has not surpassed the purchase limit 
+Incorrect input – Check that all the fields have the correct information </div>
+  </li>
+
+   <li class="accordion-navigation">
+    <a href="#panel13c">Is it safe to use my credit card on the website? </a>
+    <div id="panel13c" class="content">
+Yes, the data is transmitted SSL-encrypted. For payments with Visa and MasterCard only SET (Secure Electronic Transactions) are transactions are accepted.  </div>
+  </li>
+
+     <li class="accordion-navigation">
+    <a href="#panel14c">Is it safe to use my credit card on the website? </a>
+    <div id="panel14c" class="content">
+<p>Yes, the data is transmitted SSL-encrypted. For payments with Visa and MasterCard only SET (Secure Electronic Transactions) are transactions are accepted. 
+
+After verifying that the card is included in the SET system, the system will contact the card-issuing bank to let the buyer authorize the purchase. 
+
+When the bank confirms the authenticity, the payment will be charged to the card. Otherwise the order will be cancelled.  </p></div>
+  </li>
+
+
+
+</ul>
+<!--END FAQ ACCORDION 2 -->
+
+
+<!-- FAQ ACCORDION 3 -->
+DELIVERY 
+
+<ul class="accordion" data-accordion>
+
+   <li class="accordion-navigation">
+    <a href="#panel15c">Where can I receive my order? </a>
+    <div id="panel15c" class="content">
+It can be sent to an address selected by you (home, work, etc.) with the exception of PO Boxes. Items will not be delivered to PO Boxes.     </div>
+  </li>
+
+     <li class="accordion-navigation">
+    <a href="#panel16c"> Can the delivery country be different from the purchase country? </a>
+    <div id="panel16c" class="content">
+No, the delivery country must always be the same country in which the purchase was made. 
+ </div>
+  </li>
+
+       <li class="accordion-navigation">
+    <a href="#panel17c"> How long will my order take to arrive? </a>
+    <div id="panel17c" class="content">
+Delivery times depend on the type of delivery selected.  Standard deliveries may take 3 – 7 business days and express deliveries between 2 – 3 business days.  </div>
+  </li>
+
+         <li class="accordion-navigation">
+    <a href="#panel18c"> How much do I pay for delivery service? </a>
+    <div id="panel18c" class="content">
+For users that use concept boxes to buy pre-assembled product packages, shipping is free. For individual purchases, charges may vary. </div>
+  </li>
+
+         <li class="accordion-navigation">
+    <a href="#panel19c"> Can I track my order? </a>
+    <div id="panel19c" class="content">
+Yes, after the product has been shipped you will be provided a tracking number and be able to see the status of your order in real time. To do this, go to the “my orders” section in your account. </div>
+  </li>
+
+         <li class="accordion-navigation">
+    <a href="#panela"> What is the home delivery process? </a>
+    <div id="panel1a" class="content">
+If you have selected home delivery, we will send you an email confirming that your items have been dispatched (when order leaves the warehouse). Another email will be sent with the tracking number (with link to courier’s web page). </div>
+  </li>
+
+
+</ul>
+<!-- END FAQ ACCORDION 3 -->
+
+  </p>
+  <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+</div>
+</li>
+
+<!--END FAQ MODAL-->
+
           <li class="divider"></li>
          
-          </li>
         </ul>
       </li>
-      <li class="divider"></li>
-    </ul>
+    </ul> <!--END TOPBAR CUSTOMER SERVICE-->
 
 
 
@@ -134,8 +471,13 @@
   		<a href="/accounts/register" class="radius button">My Account</a>
 		</li>
       </ul>
-  </section></nav>
-</div>
+
+
+
+
+  <!--END TOPBAR -->    
+  </section>
+</nav>
 
 
 
@@ -232,26 +574,29 @@
 <script src="{% static "assets/js/foundation.min.js" %}"></script>
 <script type="text/javascript" src="{% static "assets/slick/slick.min.js" %}"></script>
 
-<script>
-  $(document).foundation();
-</script>
+
 
 <!--Slick-->
   <script type="text/javascript">
-   
-//Homepage carousel
-   $(document).ready(function(){
-      $('.your-class').slick({
-  dots: true,
+    $(document).ready(function(){
+
+
+ $('.slk').slick({
   infinite: true,
-  speed: 500,
-  fade: true,
-  cssEase: 'linear'
-        });
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 2000,
+  pauseOnHover: false,
+});
+
+
     });
+  </script>
 
 
-   
+  <script>
+    $(document).foundation();
   </script>
 
 </body>

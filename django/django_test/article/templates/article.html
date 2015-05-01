@@ -7,61 +7,71 @@
 {% endblock %}
 
 {% block content %}
-<div class="row">
-	<div class="large-12 columns">
-		<div class="panel radius">
-			<h1>{{ article.title }}</h1>
-			<p>{{ article.body }}</p>
-			<p>{{ article.tags }}</p>
-			<p>{{ article.ecwid }}</p>
+<div class="row panel radius">
 
+<div class="large-12 columns">
+<div class="ecwid ecwid-SingleProduct ecwid-Product ecwid-Product-{{ article.ecwid }}" itemscope itemtype="http://schema.org/Product" data-single-product-id="{{ article.ecwid }}">
 
-			<div class="row">
 				<div class="large-12 columns">
-
-
-					<div class="callout panel radius">
-					<div align="center">
-<ul class="clearing-thumbs" data-clearing>
-			{% if article.thumbnail %}
-  <li><a href="/static/assets/{{article.thumbnail}}"><img src="/static/assets/{{article.thumbnail}}"></a></li>
-			{% endif %}
-
-			{% if article.thumbnail2 %}
-  <li><a href="/static/assets/{{article.thumbnail2}}"><img src="/static/assets/{{article.thumbnail2}}"></a></li>
-			{% endif %}
-
-			{% if article.thumbnail3 %}
-  <li><a href="/static/assets/{{article.thumbnail3}}"><img src="/static/assets/{{article.thumbnail3}}"></a></li>
-			{% endif %}
-</ul>	
-</div>
-						<div class="ecwid ecwid-SingleProduct ecwid-Product ecwid-Product-{{ article.ecwid }}" itemscope itemtype="http://schema.org/Product" data-single-product-id="{{ article.ecwid }}">
+						<ul class="pricing-table">
+						  <li class="title"><h1 style="color:white;">{{ article.title }}</h1></li>
+						  <li class="price">	<div class="ecwid-productBrowser-price ecwid-price" itemprop="price"></div></li>				
+						  <li class="description">{{ article.body }}</li>
+						  <li class="bullet-item">{{ article.clothing_style }}</li>
+						  <li class="bullet-item">{{ article.ecwid }}</li>
+						  <li class="bullet-item">{{ article.tags }}</li>
+						  <li class="bullet-item"><div itemprop="options"></div></li>
+						  <li class="bullet-item"><div itemprop="addtobag"></div></li>
+						  <li class="bullet-item"><p>{{article.likes}} people liked this article <a href="/articles/like/{{article.id}}">Like</a></p> </li>
 
 
 
-
-
-						<div class="ecwid-title" itemprop="name"></div><div itemtype="http://schema.org/Offer" itemscope itemprop="offers"><div class="ecwid-productBrowser-price ecwid-price" itemprop="price"></div></div><div itemprop="options"></div><div itemprop="addtobag"></div></div><div id='xSingleProduct-place'></div><script type='text/javascript'> function onloadCallback() {xSingleProduct('id=xSingleProduct-place');}if (!window.ecwidScript) { window.ecwid_script_defer = true;window.ecwidScript = document.createElement('script');ecwidScript.defer=true;ecwidScript.src='http://app.ecwid.com/script.js?6350862';ecwidScript.charset='utf-8';if(ecwidScript.addEventListener) {ecwidScript.addEventListener('load', onloadCallback, false);} else if(ecwidScript.readyState) {ecwidScript.onreadystatechange = onloadCallback;}document.body.appendChild(ecwidScript);} else if (window.Ecwid) {onloadCallback();}</script>
-
-					</div>
+			
+						</ul>
 				</div>
-			</div>
-		
+<!--
+				<div class="large-12 columns">
+						<ul class="clearing-thumbs" data-clearing>
+						{% if article.thumbnail %}
+  							<li><a href="/static/assets/{{article.thumbnail}}"><img src="/static/assets/{{article.thumbnail}}"></a></li>
+						{% endif %}
 
+						{% if article.thumbnail2 %}
+  							<li><a href="/static/assets/{{article.thumbnail2}}"><img src="/static/assets/{{article.thumbnail2}}"></a></li>
+						{% endif %}
 
-			<h3>{{ article.clothing_style }}</h3>
+						{% if article.thumbnail3 %}
+  							<li><a href="/static/assets/{{article.thumbnail3}}"><img src="/static/assets/{{article.thumbnail3}}"></a></li>
+						{% endif %}
+						</ul>	
+				</div>
+-->
 
+				<div class="large-6 columns">
 
-			<p>{{article.likes}} people liked this  article</p>
-			<p><a href="/articles/like/{{article.id}}">Like</a></p>
+  <div class="your-class">
+    <div><img src="/static/assets/{{article.thumbnail}}"></div>
+    <div><img src="/static/assets/{{article.thumbnail2}}"></div>
+    <div><img src="/static/assets/{{article.thumbnail3}}"></div>
+  </div>
 
-
-
-
-		</div>
-	</div>
 </div>
+</div>
+</div>
+</div>
+
+
+
+						
+						<!--<div class="ecwid-title" itemprop="name"></div>-->
+						<!--<div itemtype="http://schema.org/Offer" itemscope itemprop="offers">
+						</div>-->
+
+						<div id='xSingleProduct-place'></div>
+
+						<script type='text/javascript'> function onloadCallback() {xSingleProduct('id=xSingleProduct-place');}if (!window.ecwidScript) { window.ecwid_script_defer = true;window.ecwidScript = document.createElement('script');ecwidScript.defer=true;ecwidScript.src='http://app.ecwid.com/script.js?6350862';ecwidScript.charset='utf-8';if(ecwidScript.addEventListener) {ecwidScript.addEventListener('load', onloadCallback, false);} else if(ecwidScript.readyState) {ecwidScript.onreadystatechange = onloadCallback;}document.body.appendChild(ecwidScript);} else if (window.Ecwid) {onloadCallback();}</script>
+
+				
 <!--
 <h2>Comments</h2>
 {% for c in article.comment_set.all %}
