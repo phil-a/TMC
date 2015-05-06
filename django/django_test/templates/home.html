@@ -3,29 +3,6 @@
 
 {% block sidebar %}
 
-<nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-	<ul class="left">
-		<li class="has-form">
-			<div class="row collapse">
-	   			<div class="large-8 small-9 columns">
-		   			{% csrf_token %}
-					<input type="text" placeholder="Find Stuff" id="search" name="search" />
-	    		</div>
-		    	<div class="large-8 small-3 columns">
-		    	</div>
-			</div>
-		</li>
-    </ul>
-</nav>
-
-  <div id = "search-results">
-  </div>
-
-<!-- blank nav bar -->
-  <nav class="top-bar" data-topbar role="navigation">
-  </nav>
-
-
 <!--Carousel -->
 
 <div class="slk">
@@ -34,8 +11,6 @@
 		<div><img src="{% static "assets/images/f3.jpg" %}"  width="100%"></div> 
 </div>
 
-
-	<!--<img class = "img-border" src="{% static "assets/images/f3.jpg" %}"  width="100%">-->
 {% endblock %}
 
 {% block content %}

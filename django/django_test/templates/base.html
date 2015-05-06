@@ -20,12 +20,102 @@
 
 
 				<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
+        <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
+
+
+<style>
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.media {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+}
+
+.media__image { display: block; }
+
+.media__body {
+  background: rgba(150, 200, 255, 0.7);
+  bottom: 0;
+  color: black;
+  font-size: 0.01em;
+  left: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 3.75em 3em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  right: 0;
+  padding-top: 9em;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.media__body:hover { opacity: 1; }
+
+.media__body:after,
+.media__body:before {
+  border: 10px solid rgba(0, 0, 0, .5);
+  bottom: 1.1em;
+  content: '';
+  left: -1.1em;
+  opacity: 0;
+  position: absolute;
+  right: -1.1em;
+  top: 1.1em;
+  -webkit-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  transform: scale(1.5);
+  -webkit-transition: 0.6s 0.2s;
+  transition: 0.6s 0.2s;
+}
+
+.media__body:before {
+  border-bottom: none;
+  border-top: none;
+  left: 0em;
+  right: 0em;
+}
+
+.media__body:after {
+  border-left: none;
+  border-right: none;
+  bottom: 0em;
+  top: 0em;
+}
+
+.media__body:hover:after,
+.media__body:hover:before {
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.media__body h2 { margin-top: 0; }
+
+.media__body p { margin-bottom: 1.5em; }
+
+
+</style>
+
+
+
+
+
 </head>
 
 <body style="background-image: url({% static "assets/images/fabric_plaid_@2X.png" %}); background-repeat: repeat;">
 
-<!--<div class="sticky">-->
+<div class="sticky">
 
 <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
   <ul class="title-area">
@@ -38,6 +128,11 @@
     <li class="toggle-topbar menu-icon"><a href=""><span>Menu</span></a></li>
   </ul>
   
+
+
+ <section class="top-bar-section">
+
+
 <section class="top-bar-section">
 
 <!--TOPBAR SHOP -->
@@ -85,7 +180,12 @@
       <li class="divider"></li>
     </ul>
 <!--END TOPBAR SHOP-->
+    <!-- Magazine -->
+    <ul class="left">
+      <li class=""><a href="#">The Magazine</a></li>
+      <li class="divider"></li>
 
+    </ul>
 
 <!--TOPBAR CUSTOMER SERVICE -->
     <ul class="left">
@@ -464,9 +564,22 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 
 
-
     <!-- Right Nav Section -->
       <ul class="right">
+
+<li class="has-form">
+  <div class="row collapse">
+    <div class="large-8 small-9 columns">
+      <input type="text" placeholder="Find Stuff" id="search" name="search">
+    </div>
+    <div class="large-4 small-3 columns">
+    {% csrf_token %}
+      <a href="#" class="alert button expand">Search</a>
+    </div>
+  </div>
+</li>
+
+
       	<li class="has-form">
   		<a href="/accounts/register" class="radius button">My Account</a>
 		</li>
@@ -482,6 +595,12 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 
 
+<!--End STICKY -->
+</div>
+
+
+  <div id = "search-results">
+  </div>
 
 <div id="page">
 
@@ -506,7 +625,7 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 			<div class="footer-left">
 
-				<h3>Company<span>logo</span></h3>
+				<h3>ThatMan<span>Concept</span></h3>
 
 				<p class="footer-links">
 					<a href="#">Home</a>
@@ -522,14 +641,14 @@ If you have selected home delivery, we will send you an email confirming that yo
 					<a href="#">Contact</a>
 				</p>
 
-				<p class="footer-company-name">Company Name &copy; 2015</p>
+				<p class="footer-company-name">ThatManConcept &copy; 2015</p>
 			</div>
 
 			<div class="footer-center">
 
 				<div>
 					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Paris, France</p>
+					<p><span>4700 Keele Street</span>Toronto, Ontario</p>
 				</div>
 
 				<div>
@@ -548,7 +667,7 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 				<p class="footer-company-about">
 					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+					"Our intent to re-design the online customer experience and provide the male sophisticate an unrivalled selection of products is what compels us to identify and recruit the best people for That Man Concept."
 				</p>
 
 				<div class="footer-icons">

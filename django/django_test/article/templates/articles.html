@@ -4,58 +4,6 @@
 
 {% block sidebar %}
 
-
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: large">
-    <ul class="left">
-	    <li class="has-form">
-	  		<div class="row collapse">
-	   		<div class="large-8 small-9 columns">
-	   		{% csrf_token %}
-	      		<input type="text" placeholder="Find Stuff" id="search" name="search" />
-	    	</div>
-
-
-	    	<div class="large-8 small-3 columns">
-
-	    	</div>
-
-	  		</div>
-
-		</li>
-
-    </ul>
-
-  </nav>
-
-  <div id = "search-results">
-  </div>
-
-<!-- Blank nav bar -->
-  <nav class="top-bar" data-topbar role="navigation">
-
-  </nav>
-
-<!--
-<ul class="button-group radius">
-  <li><a href="/articles/all"  class="button secondary">Articles</a></li>
-  <li><a href="/articles/create" class="button secondary">Create Article</a></li>
-  <li><a href="/accounts/register" class="button secondary">Register</a></li>
-</ul>
--->
-<!--
-	<div class="row">
-          <div class="large-12 columns">
-            <div class="panel">
-				<h3>Search</h3>
-				{% csrf_token %}
-				<input type="text" id="search" name="search" />
-
-				<ul class = "" id = "search-results">
-				</ul>
-			</div>
-		</div>
-	</div>			
--->
 {% endblock %}
 
 
@@ -66,42 +14,33 @@
 
 
 
-
-<div class="row">
-	<div class="large-12 columns">
-		<div style = "margin-top: 20px;" class="panelc">
-			<!--<h2>Language is: {{language}} </h2>
-
-			<h2>Session Language is: {{session_language}} </h2>-->
+			<!--<h2>Session Language is: {{session_language}} </h2>-->
 			{% if articles.count > 0 %}
 
 				{% for article in articles %}
 
-			  		<div class="row">
-			        	<div class="large-12 columns">
-			        		<div class="callout panelc">
-			        			<h2><a href="/articles/get/{{ article.id }}/" class = "small radius button">{{ article.title }}</a></h2>
-								<p>{{ article.body|upper|truncatewords:"10" }}</p>
+			        		<!--	<h2><a href="/articles/get/{{ article.id }}/" class = "small radius button">{{ article.title }}</a></h2>
+								<p>{{ article.body|upper|truncatewords:"10" }}</p>-->
 								{% if article.thumbnail %}
 
-									<p><a class="th radius" href="/articles/get/{{ article.id }}/"><img src="/static/assets/{{article.thumbnail}}" width="100"/></a></p>
+								<div class="media"> <img width="300px" height="500px" class="media__image" src="/static/assets/{{article.thumbnail}}" alt="" />
+								  <div class="media__body">
+								    <h5><b>{{ article.title }}</b></h5>
+								    <hr>
+								    <!--{{ article.body|upper|truncatewords:"10" }}-->
+								    {{ article.body }}
+								  </div>
+								</div>
 
 
 								{% endif %}
 							
-			        		</div>
-			        	</div>
 
 
 
-			        </div>
 				{% endfor %}
 
-		</div>
 
-	</div>
-
-</div>
 </div>
 
 {% else %}
