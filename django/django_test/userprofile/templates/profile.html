@@ -2,14 +2,22 @@
 
 {% block content %}
 
-<h2>Profile</h2>
+
 
 {% for field in form %}
  	{{field.error}}
 {% endfor %}
-
-<form action = "/accounts/profile/" method="post">{% csrf_token %} {{form.as_ul}}
+<div class="row">
+    <div class="large-12 columns">
+<div class = "panel">
+<h2>Profile</h2>
+  <fieldset>
+ <legend>My Profile</legend>
+<form action = "/accounts/profile/" method="post">{% csrf_token %} {{form.as_ul}}>
 <input type = "submit" value ="update" />
 </form>
-
+  </fieldset>
+</div>
+</div>
+</div>
 {% endblock %}

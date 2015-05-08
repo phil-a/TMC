@@ -21,6 +21,8 @@
 
 				<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
         <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
+        <!--MorphSearch-->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/css/component.css" %}" />
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 
 
@@ -116,10 +118,10 @@
 <body style="background-image: url({% static "assets/images/fabric_plaid_@2X.png" %}); background-repeat: repeat;">
 
 <div class="sticky">
-
 <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
   <ul class="title-area">
     <!-- Title Area -->
+
     <li class="name">
       <h1><a href="/"><b>That Man Concept</b></a></h1>
 
@@ -130,7 +132,6 @@
   
 
 
- <section class="top-bar-section">
 
 
 <section class="top-bar-section">
@@ -142,7 +143,7 @@
         <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
           <li><label>By Style:</label></li>
           <li><a href="/articles/all">All</a></li>
-          <li><a href="#">Professional</a></li>
+          <li><a href="#">Professional </a></li>
           <li><a href="#">Street</a></li>
           <li><a href="#">Prep</a></li>
           <li class="divider"></li>
@@ -567,16 +568,9 @@ If you have selected home delivery, we will send you an email confirming that yo
     <!-- Right Nav Section -->
       <ul class="right">
 
-<li class="has-form">
-  <div class="row collapse">
-    <div class="large-8 small-9 columns">
-      <input type="text" placeholder="Find Stuff" id="search" name="search">
-    </div>
-    <div class="large-4 small-3 columns">
-    {% csrf_token %}
-      <a href="#" class="alert button expand">Search</a>
-    </div>
-  </div>
+<li>
+
+
 </li>
 
       	<li class="has-form">
@@ -598,8 +592,23 @@ If you have selected home delivery, we will send you an email confirming that yo
 </div>
 
 
-  <div id = "search-results">
-  </div>
+    <div class="container">
+      <div id="morphsearch" class="morphsearch">
+        <form class="morphsearch-form">
+          <input style="height: 100%" width ="50%" id = "search" name = "search" class="morphsearch-input" type="search" placeholder="Search..."/>
+        </form>
+                 
+        <div class="morphsearch-content">
+           {% csrf_token %}
+          <div id = "search-results"></div>
+        </div><!-- /morphsearch-content -->
+        <span class="morphsearch-close"></span>
+
+      </div><!-- /morphsearch -->
+
+      <div class="overlay"></div>
+    </div><!-- /container -->
+
 
 <div id="page">
 
@@ -624,7 +633,8 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 			<div class="footer-left">
 
-				<h3>ThatMan<span>Concept</span></h3>
+				<h3>ThatMan<span>Concept</span><img src = "http://127.0.0.1:8000/static/assets/images/tmc.png">
+</span></h3></h3>
 
 				<p class="footer-links">
 					<a href="#">Home</a>
@@ -730,6 +740,62 @@ $('.slk-article').slick({
   <script>
     $(document).foundation();
   </script>
+
+<!--Morph Search Script-->
+    <script src="{% static "assets/js/classie.js" %}"></script>
+    <script>
+      (function() {
+        var morphSearch = document.getElementById( 'morphsearch' ),
+          input = morphSearch.querySelector( 'input.morphsearch-input' ),
+          ctrlClose = morphSearch.querySelector( 'span.morphsearch-close' ),
+          isOpen = isAnimating = false,
+          // show/hide search area
+          toggleSearch = function(evt) {
+            // return if open and the input gets focused
+            if( evt.type.toLowerCase() === 'focus' && isOpen ) return false;
+
+            var offsets = morphsearch.getBoundingClientRect();
+            if( isOpen ) {
+              classie.remove( morphSearch, 'open' );
+
+              // trick to hide input text once the search overlay closes 
+              // todo: hardcoded times, should be done after transition ends
+              if( input.value !== '' ) {
+                setTimeout(function() {
+                  classie.add( morphSearch, 'hideInput' );
+                  setTimeout(function() {
+                    classie.remove( morphSearch, 'hideInput' );
+                    input.value = '';
+                  }, 300 );
+                }, 500);
+              }
+              
+              input.blur();
+            }
+            else {
+              classie.add( morphSearch, 'open' );
+            }
+            isOpen = !isOpen;
+          };
+
+        // events
+        input.addEventListener( 'focus', toggleSearch );
+        ctrlClose.addEventListener( 'click', toggleSearch );
+        // esc key closes search overlay
+        // keyboard navigation events
+        document.addEventListener( 'keydown', function( ev ) {
+          var keyCode = ev.keyCode || ev.which;
+          if( keyCode === 27 && isOpen ) {
+            toggleSearch(ev);
+          }
+        } );
+
+
+        /***** for demo purposes only: don't allow to submit the form *****/
+        morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
+      })();
+    </script>
+
 
 </body>
 </html>
