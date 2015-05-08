@@ -6,6 +6,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 	(r'^articles/', include('article.urls')),
+	(r'^accounts/', include('userprofile.urls')),
 	url(r'^$', 'django_test.views.home'),
 	url(r'^admin/', include(admin.site.urls)),
 	
