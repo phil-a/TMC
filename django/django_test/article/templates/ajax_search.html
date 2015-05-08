@@ -4,7 +4,15 @@
 {% if article.thumbnail %}
 <a class="radius" href="/articles/get/{{ article.id }}/">
 <div width = "50" height = "50" class ="button secondary radius">
-<img class = "th radius"src="/static/assets/{{article.thumbnail}}" width="75"/>
+
+								<div class="media"> <img width="300px" height="500px" class="media__image" src="/static/assets/{{article.thumbnail}}" alt="" />
+								  <div class="media__body">
+								    <h5><b>{{ article.title }}</b></h5>
+								    <hr>
+								    <!--{{ article.body|upper|truncatewords:"10" }}-->
+								    {{ article.body }}
+								  </div>
+								</div>
 <div>
 <h5>
 {{ article.title }}
@@ -12,6 +20,9 @@
 </div>
 </div>
 </a>
+
+
+
 {% endif %}
 
 {% endfor %}
