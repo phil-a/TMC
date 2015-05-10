@@ -25,6 +25,10 @@
     <link rel="stylesheet" type="text/css" href="{% static "assets/css/component.css" %}" />
 <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
 
+<!--FullWidthImageSlider-->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/FullWidthImageSlider/css/default.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "assets/FullWidthImageSlider/css/component.css" %}" />
+    <script src="{% static "assets/FullWidthImageSlider/js/modernizr.custom.js" %}"></script>
 
 <style>
 *,
@@ -138,44 +142,59 @@
 
 <!--TOPBAR SHOP -->
     <ul class="left">
-      <li class="has-dropdown not-click"><a href="#">Shop</a>
+      
 
-        <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-          <li><label>By Style:</label></li>
-          <li><a href="/articles/all">All</a></li>
-          <li><a href="#">Professional </a></li>
-          <li><a href="#">Street</a></li>
-          <li><a href="#">Prep</a></li>
+      <li  class="has-dropdown not-click"><a href="#">Shop</a>
+          <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                    <li class="divider"></li>
+
+                <li style="width: 300px; height: 300px;" class="has-dropdown not-click"><a href="#">By Style:<br><img src="http://placehold.it/300" alt="PagePreloadingEffect"/></a>
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 4</a></li>
+                  <li><label>Style</label></li>
+              <li style=""><a href="#">Professional <br><img src = "http://placehold.it/350x150"></a></li>
+              <li><a href="#">Street<br><img src = "http://placehold.it/350x150"></a></li>
+              <li ><a href="#">Prep<br><img src = "http://placehold.it/350x150"></a></li>
+                </li>
+                  <li><label></label></li>
+
+
+
+          </ul>
           <li class="divider"></li>
 
-          <li class="has-dropdown not-click"><a href="#">Sub-item 4</a>
+                <li style="width: 300px; height: 300px;" class="has-dropdown not-click"><a href="#">By Designer <br><img src="http://placehold.it/300"alt="PagePreloadingEffect"/></a>
+                <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 4</a></li>
+                  <li><label>Design</label></li>
+                  <div class = "row">
+              <li><a href="#">Designer 1<img src = "http://placehold.it/150"></a></li>
+                        <li class="divider"></li>
 
-            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 4</a></li>
-              <li><label>Level Two</label></li>
-              <li class="has-dropdown not-click"><a href="#">Sub-item 1</a>
+              <li><a href="#">Designer 2<img src = "http://placehold.it/150"></a></li>
+                        <li class="divider"></li>
 
-                <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 1</a></li>
-                  <li><label>Level Three</label></li>
-                  <li class="has-dropdown not-click"><a href="#">Sub-item 1</a>
+              <li><a href="#">Designer 3<img src = "http://placehold.it/150"></a></li>
+          </div>
+                </li>
 
-                    <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li><li class="parent-link hide-for-large-up"><a class="parent-link js-generated" href="#">Sub-item 1</a></li>
-                      <li><label>Level Four</label></li>
-                      <li><a href="#">Sub-item 1</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="#">Sub-item 2</a></li>
-                  <li><a href="#">Sub-item 3</a></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Sub-item 4</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Sub-item 2</a></li>
-              <li><a href="#">Sub-item 3</a></li>
-              <li><a href="#">Sub-item 4</a>
-            </li>
-            </ul>
+      </li>
+      </ul>
+          <li class="divider"></li>
+
+            <li  class=""><a href="/articles/all">All</a>
+          <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+
+          </ul>
+      </li>
+
+          <li class="divider"></li>
+
+
+          <li>
+            
+
+
           </li>
-          <li><a href="#">Sub-item 5</a></li>
+
         </ul>
       </li>
       <li class="divider"></li>
@@ -187,6 +206,23 @@
       <li class="divider"></li>
 
     </ul>
+
+<!--TOPBAR SHOP -->
+    <ul class="left">
+      
+
+      <li  class="has-dropdown click"><a href="#">Outfitter</a>
+          <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
+                    <li class="divider"></li>
+
+                <li style="width: 300px; height: 300px;"><a href="#"><label>Design your own style</label><br><img src="http://placehold.it/300" alt="Outfitter"/></a>
+                </li>
+                    <li class="divider"></li>
+
+          </ul>
+      </li>
+  </ul>
+
 
 <!--TOPBAR CUSTOMER SERVICE -->
     <ul class="left">
@@ -231,18 +267,7 @@
 </li>
 <!-- END CONTACT MODAL-->
          
-          <li class="has-dropdown not-click"><a href="#">Socialize</a>
 
-            <ul class="dropdown"><li class="title back js-generated"><h5><a href="javascript:void(0)">Back</a></h5></li>
-              <li><a href="#">Facebook</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Instagram</a></li>
-              <li><a href="#">Tumblr</a></li>
-            </ul>
-          <li class="divider"></li>
-
-          <li><label>Good to know</label></li>
-        </li>
 <!-- BUYING MODAL-->
  <li><a href="#" data-reveal-id="BuyingModal">Buying Guide</a>
 <div id="BuyingModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
@@ -568,14 +593,13 @@ If you have selected home delivery, we will send you an email confirming that yo
     <!-- Right Nav Section -->
       <ul class="right">
 
-<li>
 
-
-</li>
 
       	<li class="has-form">
   		<a href="/accounts/profile" class="radius button">My Account</a>
 		</li>
+
+ 
       </ul>
 
 
@@ -591,7 +615,6 @@ If you have selected home delivery, we will send you an email confirming that yo
 <!--End STICKY -->
 </div>
 
-<br><br><br><br>
 
     <div class="container">
       <div id="morphsearch" class="morphsearch">
@@ -682,14 +705,18 @@ If you have selected home delivery, we will send you an email confirming that yo
 				<p class="footer-links">
 					<a href="#">Home</a>
 					·
-					<a href="#">Blog</a>
+					<a href="#">Magazine</a>
 					·
-					<a href="#">Pricing</a>
+					<a href="#">Affiliates</a>
 					·
-					<a href="#">About</a>
+					<a href="#">About Us</a>
 					·
-					<a href="#">Faq</a>
-					·
+          <a href="#">Sizing</a>
+          ·
+          <a href="#">Faqs</a>
+          ·
+          <a href="#">Return Policies</a>
+          ·
 					<a href="#">Contact</a>
 				</p>
 
@@ -723,11 +750,26 @@ If you have selected home delivery, we will send you an email confirming that yo
 				</p>
 
 				<div class="footer-icons">
-
+<form>
+<div class="row">
+    <div class="large-12 columns">
+      <div class="row collapse">
+        <div class="small-10 columns">
+          <input type="text" placeholder="Email Address">
+        </div>
+        <div class="small-2 columns">
+          <a href="#" class="button postfix">Subscibe</a>
+        </div>
+      </div>
+    </div>
+</form>
+<br>
+          <a href="#"><i class="fa fa-youtube"></i></a>
 					<a href="#"><i class="fa fa-facebook"></i></a>
 					<a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-tumblr"></i></a>
 					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
+          <a href="#"><i class="fa fa-instagram"></i></a>
 
 				</div>
 
@@ -838,7 +880,29 @@ $('.slk-article').slick({
         morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
       })();
     </script>
+<!--FullWidthImageSlider-->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="{% static "assets/FullWidthImageSlider/js/jquery.cbpFWSlider.min.js" %}"></script>
+    <script>
+$( function() {
+        /*
+        - how to call the plugin:
+        $( selector ).cbpFWSlider( [options] );
+        - options:
+        {
+          // default transition speed (ms)
+          speed : 500,
+          // default transition easing
+          easing : 'ease'
+        }
+        - destroy:
+        $( selector ).cbpFWSlider( 'destroy' );
+        */
 
+        $( '#cbp-fwslider' ).cbpFWSlider();
+
+      } );
+    </script>
 
 </body>
 </html>
