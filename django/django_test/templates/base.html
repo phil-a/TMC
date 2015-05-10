@@ -8,27 +8,19 @@
     <link rel="stylesheet" href="{% static "assets/css/foundation.css" %}" />
         <link rel="stylesheet" href="{% static "assets/css/default.css" %}" />
 
+{% block imports %}{% endblock %}
 
-    <script src="{% static "assets/js/vendor/modernizr.js" %}"></script>
-	<script src="{% static "assets/js/jquery-2.1.3.min.js" %}"></script>
-	<script src="{% static "assets/js/ajax.js" %}"></script>
-<link rel="stylesheet" type="text/css" href="{% static "assets/slick/slick.css" %}"/>
-<link rel="stylesheet" type="text/css" href="{% static "assets/slick/slick-theme.css" %}"
-/>
+<script src="{% static "assets/js/vendor/modernizr.js" %}"></script>
+<script src="{% static "assets/js/jquery-2.1.3.min.js" %}"></script>
+<script src="{% static "assets/js/ajax.js" %}"></script>
+
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-	<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 
+<link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
 
-				<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.css"/>
-        <link href="http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.css" rel="stylesheet" type="text/css">
-        <!--MorphSearch-->
-    <link rel="stylesheet" type="text/css" href="{% static "assets/css/component.css" %}" />
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.0/slick.min.js"></script>
-
-<!--FullWidthImageSlider-->
-    <link rel="stylesheet" type="text/css" href="{% static "assets/FullWidthImageSlider/css/default.css" %}" />
-    <link rel="stylesheet" type="text/css" href="{% static "assets/FullWidthImageSlider/css/component.css" %}" />
-    <script src="{% static "assets/FullWidthImageSlider/js/modernizr.custom.js" %}"></script>
+<!--MorphSearch-->
+<link rel="stylesheet" type="text/css" href="{% static "assets/css/component.css" %}" />
 
 <style>
 *,
@@ -785,41 +777,7 @@ If you have selected home delivery, we will send you an email confirming that yo
 
 <script src="{% static "assets/js/vendor/fastclick.js" %}"></script>
 <script src="{% static "assets/js/foundation.min.js" %}"></script>
-<script type="text/javascript" src="{% static "assets/slick/slick.min.js" %}"></script>
 
-
-
-<!--Slick-->
-  <script type="text/javascript">
-    $(document).ready(function(){
-
-
- $('.slk').slick({
-  infinite: true,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-});
-
-
-$('.slk-article').slick({
-  dots: true,
-  infinite: true,
-  speed: 300,
-  centerMode: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-});
-        
-
-
-    });
-  </script>
 
 
   <script>
@@ -880,29 +838,15 @@ $('.slk-article').slick({
         morphSearch.querySelector( 'button[type="submit"]' ).addEventListener( 'click', function(ev) { ev.preventDefault(); } );
       })();
     </script>
-<!--FullWidthImageSlider-->
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="{% static "assets/FullWidthImageSlider/js/jquery.cbpFWSlider.min.js" %}"></script>
-    <script>
-$( function() {
-        /*
-        - how to call the plugin:
-        $( selector ).cbpFWSlider( [options] );
-        - options:
-        {
-          // default transition speed (ms)
-          speed : 500,
-          // default transition easing
-          easing : 'ease'
-        }
-        - destroy:
-        $( selector ).cbpFWSlider( 'destroy' );
-        */
 
-        $( '#cbp-fwslider' ).cbpFWSlider();
 
-      } );
-    </script>
+
+<!-- ECWID-->
+
+            <div id='xSingleProduct-place'></div>
+
+            <script type='text/javascript'> function onloadCallback() {xSingleProduct('id=xSingleProduct-place');}if (!window.ecwidScript) { window.ecwid_script_defer = true;window.ecwidScript = document.createElement('script');ecwidScript.defer=true;ecwidScript.src='http://app.ecwid.com/script.js?6350862';ecwidScript.charset='utf-8';if(ecwidScript.addEventListener) {ecwidScript.addEventListener('load', onloadCallback, false);} else if(ecwidScript.readyState) {ecwidScript.onreadystatechange = onloadCallback;}document.body.appendChild(ecwidScript);} else if (window.Ecwid) {onloadCallback();}</script>    
+{% block btmimports %}{% endblock %}
 
 </body>
 </html>

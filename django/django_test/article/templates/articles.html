@@ -2,7 +2,21 @@
 {% load staticfiles %}
 
 
+
+{% block imports %}
+<!-- View Mode Switch-->
+    <link rel="stylesheet" type="text/css" href="{% static "assets/ViewModeSwitch/css/default.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "assets/ViewModeSwitch/css/component.css" %}" />
+    <script src="{% static "assets/ViewModeSwitch/js/modernizr.custom.js" %}"></script>
+{% endblock %}
+
+
 {% block sidebar %}
+		<div class="container">
+			<header class="clearfix">
+				<span>By All Items</span>
+				
+			</header>	
 
 {% endblock %}
 
@@ -12,6 +26,14 @@
 {% block content %}
 
 
+			<div class="main panel" style="padding:0px;">
+
+				<div id="cbp-vm" class="cbp-vm-switcher cbp-vm-view-grid">
+					<div class="cbp-vm-options">
+						<a href="#" class="cbp-vm-icon cbp-vm-grid cbp-vm-selected" data-view="cbp-vm-view-grid">Grid View</a>
+						<a href="#" class="cbp-vm-icon cbp-vm-list" data-view="cbp-vm-view-list">List View</a>
+					</div>
+					<ul>
 
 
 			<!--<h2>Session Language is: {{session_language}} </h2>-->
@@ -23,16 +45,20 @@
 								<p>{{ article.body|upper|truncatewords:"10" }}</p>-->
 								{% if article.thumbnail %}
 
-								<div class="media"> <img width="300px" height="500px" class="media__image" src="/static/assets/{{article.thumbnail}}" alt="" />
-								  <div class="media__body">
-								    <h5><b>{{ article.title }}</b></h5>
-								    <hr>
-								    <!--{{ article.body|upper|truncatewords:"10" }}-->
-								    {{ article.body }}
-								  </div>
-								</div>
 
-								
+
+						<li>
+							<a class="cbp-vm-image" href="/articles/get/{{ article.id }}/"><img src="/static/assets/{{article.thumbnail}}">	</a>
+							<h3 class="cbp-vm-title">{{ article.title }}</h3>
+							<div class="cbp-vm-price">$19.90</div>
+							<div class="cbp-vm-details">
+					 			{{ article.body }}
+							</div>
+							
+
+						</li>
+
+		
 
 
 								{% endif %}
@@ -42,13 +68,23 @@
 
 				{% endfor %}
 
-
+</ul>
+			</div><!-- /main -->
+		</div><!-- /container -->
 </div>
-
+</div>
 {% else %}
 
 <p>None to show!</p>
 
 {% endif %}
+			
+{% endblock %}
 
+
+
+{% block btmimports %}
+<!--ViewModeSwitch-->
+    <script src="{% static "assets/ViewModeSwitch/js/classie.js" %}"></script>
+    <script src="{% static "assets/ViewModeSwitch/js/cbpViewModeSwitch.js" %}"></script>
 {% endblock %}
